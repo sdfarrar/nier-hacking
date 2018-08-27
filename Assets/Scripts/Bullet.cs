@@ -9,15 +9,13 @@ public class Bullet : MonoBehaviour {
     private Vector3 velocity;
     private Rigidbody rb;
 
-	void Start() {
+	void Awake() {
         rb = GetComponent<Rigidbody>();
-        //transform.rotation = Quaternion.LookRotation(velocity, Vector3.up);
 	}
 
     public void Initialize(Vector3 direction, float speed){
         this.velocity = direction * speed;
-        transform.rotation = Quaternion.LookRotation(this.velocity, Vector3.up);
-        //Debug.Log("Vel: " + direction + " | Rot: " + transform.rotation.eulerAngles);
+        transform.rotation = Quaternion.LookRotation(this.velocity, Vector3.forward + Vector3.right);
     }
 	
 	void Update() {
