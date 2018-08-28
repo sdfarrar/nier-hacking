@@ -87,7 +87,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4255775456500778}
   - component: {fileID: 114367269161676212}
+  - component: {fileID: 114635968168935958}
   - component: {fileID: 54351070710370528}
+  - component: {fileID: 65580511513555084}
+  - component: {fileID: 65891828468709374}
   m_Layer: 14
   m_Name: Ship
   m_TagString: Player
@@ -447,7 +450,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 1582ea2e490f9cd49a8649051a91999c, type: 3}
+  - {fileID: 2100000, guid: b6922168553a22b438f11d9ba883ff95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -524,6 +527,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &65580511513555084
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691037934037558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.5}
+  m_Center: {x: 0.43, y: 0, z: 0}
+--- !u!65 &65891828468709374
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691037934037558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 1, z: 0.75}
+  m_Center: {x: -1, y: 0, z: 0}
 --- !u!95 &95738983026649906
 Animator:
   serializedVersion: 3
@@ -554,3 +581,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 40
+--- !u!114 &114635968168935958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691037934037558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d785303693ac44895bd0e9c185f1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+  LeftWing: {fileID: 4474243732885932}
+  RightWing: {fileID: 4607487890591678}

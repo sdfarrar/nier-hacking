@@ -5,16 +5,28 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour {
 
     public LayerMask Damageables;
+    public int DamageAmount;
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("DO I KILL?");
         if(!CanDamage(other)){ return; }
-        Debug.Log("YES");
+        if(!Damage(other)){ return; }
+        KillSelf();
     }
 
     private bool CanDamage(Collider other){
         int layer = other.gameObject.layer;
-        Debug.Log(LayerMask.LayerToName(layer));
         return Damageables == (Damageables | (1 << layer));
     }
+
+    private bool Damage(Collider other) {
+        IDamageable obj = other.GetComponent<IDamageable>();
+        if(obj==null){ return false; }
+        obj.TakeDamage(this);
+        return true;
+    }
+
+    private void KillSelf() {
+        Destroy(this.gameObject);
+    }
+
 }

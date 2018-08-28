@@ -157,6 +157,7 @@ MonoBehaviour:
   Damageables:
     serializedVersion: 2
     m_Bits: 16384
+  DamageAmount: 1
 --- !u!136 &136711265777277688
 CapsuleCollider:
   m_ObjectHideFlags: 1

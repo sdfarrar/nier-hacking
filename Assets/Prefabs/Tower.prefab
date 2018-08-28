@@ -58,6 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4103255172003462}
+  - component: {fileID: 114605043319079620}
   m_Layer: 15
   m_Name: Tower
   m_TagString: Untagged
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760287784492700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.28, y: 0, z: -11.004883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4572620267432020}
@@ -223,13 +224,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1475902856785864}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59a4b98d12e6b534da8a18a67e302995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4103255172003462}
   OrbitDegreesPerSec: 180
+--- !u!114 &114605043319079620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760287784492700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f991e5111a660d45b09b35fbb395b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 4
 --- !u!114 &114844610178178448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,7 +259,7 @@ MonoBehaviour:
   BulletSpeed: 3
   FireDirection: {fileID: 4103255172003462}
   InvertDirection: 0
-  FireRate: 2
+  FireRate: 0.5
 --- !u!136 &136390845603082848
 CapsuleCollider:
   m_ObjectHideFlags: 1
