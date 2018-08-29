@@ -28,6 +28,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1148542021606386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4602755968858192}
+  - component: {fileID: 114338858086336040}
+  m_Layer: 14
+  m_Name: Turret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1392500036832324
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4275489648951436}
+  - {fileID: 4602755968858192}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0.11, z: 0}
@@ -232,6 +249,19 @@ Transform:
   - {fileID: 4283519768071304}
   m_Father: {fileID: 4275489648951436}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4602755968858192
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148542021606386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.646, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4255775456500778}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4607487890591678
 Transform:
@@ -569,6 +599,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114338858086336040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148542021606386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecab718c6a0f064bb460ab4e7556040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 114166968364457824, guid: 3bebc39a73926fa4da029519a337844b,
+    type: 2}
+  BulletSpeed: 4
+  FireDirection: {fileID: 4255775456500778}
+  InvertDirection: 0
+  FireDelay: 0
 --- !u!114 &114367269161676212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 40
+  maxRotationSpeed: 720
 --- !u!114 &114635968168935958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -595,3 +643,4 @@ MonoBehaviour:
   Health: 3
   LeftWing: {fileID: 4474243732885932}
   RightWing: {fileID: 4607487890591678}
+  turret: {fileID: 114338858086336040}

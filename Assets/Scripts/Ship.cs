@@ -7,6 +7,7 @@ public class Ship : MonoBehaviour, IDamageable {
     public int Health = 3;
     public Transform LeftWing;
     public Transform RightWing;
+    public Turret turret;
 
 	void Start() {
 		
