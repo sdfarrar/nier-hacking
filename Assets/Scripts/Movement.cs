@@ -5,14 +5,14 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
 	public float Speed = 10f;
+	public float maxRotationSpeed = 720;
 
 	void Awake() {
 	}
 	
 	void Update() {
 		Move();
-		Rotate1();
-		//Rotate2();
+		Rotate();
 	}
 
 	private void Move(){
@@ -20,20 +20,17 @@ public class Movement : MonoBehaviour {
 		transform.position += moveDirection * Speed * Time.deltaTime;
 	}
 
-	private void Rotate1(){
-		float rx = Input.GetAxis("RightStickHorizontal");
-		float ry = Input.GetAxis("RightStickVertical")*-1;
-		float angle = Mathf.Atan2(rx, ry) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.Euler(0, angle, 0);
-		//Debug.Log("x: " + rx + " | y: " + ry + " | angle: " + angle);
+	//private void Rotate(){
+	//	float rx = Input.GetAxis("RightStickHorizontal");
+	//	float ry = -Input.GetAxis("RightStickVertical");
+	//	float angle = Mathf.Atan2(rx, ry) * Mathf.Rad2Deg;
+	//	transform.rotation = Quaternion.Euler(0, angle, 0);
+	//}
 
-	}
-
-	private void Rotate2(){
-		Vector3 lookDirection = Vector3.right * Input.GetAxis("RightStickHorizontal") + Vector3.forward * Input.GetAxis("RightStickVertical") * -1;
+	private void Rotate(){
+		Vector3 lookDirection = Vector3.right * Input.GetAxis("RightStickHorizontal") + Vector3.forward * -Input.GetAxis("RightStickVertical");
 		if(lookDirection.sqrMagnitude>0){
-			//Debug.Log(lookDirection);
-			transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lookDirection,Vector3.up), maxRotationSpeed*Time.deltaTime);
 		}
 
 	}
