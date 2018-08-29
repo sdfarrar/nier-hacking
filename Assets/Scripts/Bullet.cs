@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour {
 
     public void Initialize(Vector3 direction, float speed){
         this.velocity = direction * speed;
+        transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 	
 	void Update() {

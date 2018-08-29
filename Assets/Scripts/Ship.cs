@@ -14,7 +14,9 @@ public class Ship : MonoBehaviour, IDamageable {
 	}
 	
 	void Update() {
-		
+		if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Joystick1Button0)){
+            turret.Fire();
+        }
 	}
 
     public void TakeDamage(DamageDealer damageDealer) {
