@@ -28,9 +28,12 @@ public class Movement : MonoBehaviour {
 	//}
 
 	private void Rotate(){
+		Vector3 moveDirection = Vector3.forward * -Input.GetAxis("LeftStickHorizontal") + Vector3.right * Input.GetAxis("LeftStickVertical");
 		Vector3 lookDirection = Vector3.right * Input.GetAxis("RightStickHorizontal") + Vector3.forward * -Input.GetAxis("RightStickVertical");
 		if(lookDirection.sqrMagnitude>0){
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lookDirection,Vector3.up), maxRotationSpeed*Time.deltaTime);
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lookDirection*Time.deltaTime,Vector3.up), maxRotationSpeed*Time.deltaTime);
+		}else if(moveDirection.sqrMagnitude>0){
+			transform.rotation = Quaternion.LookRotation(moveDirection*Time.deltaTime,Vector3.up);
 		}
 
 	}
