@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4198396368291256}
   - component: {fileID: 33575633415551336}
   - component: {fileID: 23816526560300894}
-  - component: {fileID: 135597566051917234}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -40,9 +39,10 @@ GameObject:
   - component: {fileID: 54471405785952772}
   - component: {fileID: 114166968364457824}
   - component: {fileID: 114226846970013344}
+  - component: {fileID: 65797248318178820}
   m_Layer: 0
   m_Name: ShipBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &65797248318178820
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681502366100686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114166968364457824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,15 +170,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   DamageAmount: 2
---- !u!135 &135597566051917234
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616465324636648}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

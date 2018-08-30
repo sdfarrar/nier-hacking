@@ -21,8 +21,7 @@ GameObject:
   - component: {fileID: 4198396368291256}
   - component: {fileID: 33575633415551336}
   - component: {fileID: 23816526560300894}
-  - component: {fileID: 135597566051917234}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,9 +39,10 @@ GameObject:
   - component: {fileID: 54471405785952772}
   - component: {fileID: 114166968364457824}
   - component: {fileID: 114226846970013344}
-  m_Layer: 0
+  - component: {fileID: 135100831332668654}
+  m_Layer: 15
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681502366100686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.380371, y: 2.856079, z: -9.550781}
+  m_LocalPosition: {x: 0.3873353, y: 3.22, z: -5.2993627}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4198396368291256}
@@ -158,12 +158,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   DamageAmount: 1
---- !u!135 &135597566051917234
+--- !u!135 &135100831332668654
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1616465324636648}
+  m_GameObject: {fileID: 1681502366100686}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
