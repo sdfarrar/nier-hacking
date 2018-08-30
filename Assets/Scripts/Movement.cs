@@ -36,8 +36,7 @@ public class Movement : MonoBehaviour {
     }
 
 	private void MoveController(){
-        //TODO update since we properly rotated camera
-		Vector3 moveDirection = new Vector3(Input.GetAxis("LeftStickHorizontal"), 0, Input.GetAxis("LeftStickVertical"));
+		Vector3 moveDirection = new Vector3(Input.GetAxis("LeftStickHorizontal"), 0, -Input.GetAxis("LeftStickVertical"));
 		transform.position += moveDirection * Speed * Time.deltaTime;
 	}
 
@@ -49,9 +48,8 @@ public class Movement : MonoBehaviour {
 	//}
 
 	private void RotateController(){
-        //TODO update since we properly rotated camera
-		Vector3 moveDirection = Vector3.forward * -Input.GetAxis("LeftStickHorizontal") + Vector3.right * Input.GetAxis("LeftStickVertical");
-		Vector3 lookDirection = Vector3.right * Input.GetAxis("RightStickHorizontal") + Vector3.forward * -Input.GetAxis("RightStickVertical");
+		Vector3 moveDirection = Vector3.forward * -Input.GetAxis("LeftStickHorizontal") + Vector3.right * -Input.GetAxis("LeftStickVertical");
+		Vector3 lookDirection = Vector3.right * -Input.GetAxis("RightStickHorizontal") + Vector3.forward * Input.GetAxis("RightStickVertical");
 		if(lookDirection.sqrMagnitude>0){
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(lookDirection*Time.deltaTime,Vector3.up), MaxRotationSpeed*Time.deltaTime);
 		}else if(moveDirection.sqrMagnitude>0){
