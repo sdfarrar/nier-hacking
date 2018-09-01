@@ -84,7 +84,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4103255172003462
 Transform:
   m_ObjectHideFlags: 1
@@ -279,7 +279,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &114131483117783802
 MonoBehaviour:
@@ -309,7 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36197b83e3e19d24282d2970d3aaaa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 0}
+  BulletPrefab: {fileID: 114199061409129536, guid: 31f3af230e7ab9847b91399a30a51f8a,
+    type: 2}
   BulletSpeed: 4
   FireDirection: {fileID: 4103255172003462}
   InvertDirection: 0
@@ -348,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4103255172003462}
-  OrbitDegreesPerSec: 180
+  OrbitDegreesPerSec: 65
 --- !u!114 &114605043319079620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 4103255172003462}
-  OrbitDegreesPerSec: 180
+  OrbitDegreesPerSec: 65
 --- !u!136 &136135185623195596
 CapsuleCollider:
   m_ObjectHideFlags: 1
