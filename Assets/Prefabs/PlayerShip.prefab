@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 65580511513555084}
   - component: {fileID: 65891828468709374}
   m_Layer: 14
-  m_Name: Ship
+  m_Name: PlayerShip
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 40
-  maxRotationSpeed: 720
+  MaxRotationSpeed: 720
+  UseController: 0
 --- !u!114 &114635968168935958
 MonoBehaviour:
   m_ObjectHideFlags: 1
