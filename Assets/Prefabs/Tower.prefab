@@ -293,10 +293,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 114166968364457824, guid: e20a2b1315a8eb54b812c0e82cb69dfa,
     type: 2}
-  BulletSpeed: 3
+  BulletSpeed: 4
   FireDirection: {fileID: 4103255172003462}
   InvertDirection: 0
-  FireDelay: 0.25
+  FireDelay: 0.15
 --- !u!114 &114351508945438596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -310,10 +310,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 114438885966494208, guid: 31f3af230e7ab9847b91399a30a51f8a,
     type: 2}
-  BulletSpeed: 3
+  BulletSpeed: 4
   FireDirection: {fileID: 4103255172003462}
   InvertDirection: 0
-  FireDelay: 0.25
+  FireDelay: 0.15
 --- !u!114 &114565190364524444
 MonoBehaviour:
   m_ObjectHideFlags: 1
