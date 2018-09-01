@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class AutoTurret : Turret {
 
-	void Update() {
-		Fire();
+	void Awake(){
+		InvokeRepeating("Fire", 0, FireDelay);
 	}
 
+	public override bool CanFire(){
+		return true;
+	}
 }

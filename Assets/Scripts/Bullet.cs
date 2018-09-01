@@ -22,4 +22,8 @@ public class Bullet : MonoBehaviour {
 		rb.velocity = velocity;
 	}
 
+    public void Kill(){
+        Destroy(this.gameObject);
+    }
+
 }

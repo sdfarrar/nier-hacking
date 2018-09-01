@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4255775456500778}
   - component: {fileID: 114367269161676212}
   - component: {fileID: 114635968168935958}
+  - component: {fileID: 114682104260575690}
   - component: {fileID: 54351070710370528}
   - component: {fileID: 65580511513555084}
   - component: {fileID: 65891828468709374}
@@ -555,7 +556,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 1
 --- !u!65 &65580511513555084
 BoxCollider:
@@ -641,7 +642,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d785303693ac44895bd0e9c185f1fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
   LeftWing: {fileID: 4474243732885932}
   RightWing: {fileID: 4607487890591678}
   turret: {fileID: 114338858086336040}
+--- !u!114 &114682104260575690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691037934037558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e6234390748014bbf6f6af485ae4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
+  InvulnerabilityTime: 0.5
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114635968168935958}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114635968168935958}
+        m_MethodName: DamageTaken
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: IntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

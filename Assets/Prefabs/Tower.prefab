@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 4103255172003462}
   - component: {fileID: 114605043319079620}
   - component: {fileID: 136135185623195596}
+  - component: {fileID: 114501100018995172}
   m_Layer: 15
   m_Name: Tower
   m_TagString: Untagged
@@ -308,12 +309,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36197b83e3e19d24282d2970d3aaaa9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 114438885966494208, guid: 31f3af230e7ab9847b91399a30a51f8a,
-    type: 2}
+  BulletPrefab: {fileID: 0}
   BulletSpeed: 4
   FireDirection: {fileID: 4103255172003462}
   InvertDirection: 0
   FireDelay: 0.15
+--- !u!114 &114501100018995172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760287784492700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e6234390748014bbf6f6af485ae4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 4
+  InvulnerabilityTime: 0
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: IntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &114565190364524444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,7 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f991e5111a660d45b09b35fbb395b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 4
 --- !u!114 &114668020812108002
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -37,9 +37,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4564771969477254}
   - component: {fileID: 54471405785952772}
-  - component: {fileID: 114226846970013344}
-  - component: {fileID: 114438885966494208}
   - component: {fileID: 135914159639147536}
+  - component: {fileID: 114226846970013344}
+  - component: {fileID: 114199061409129536}
+  - component: {fileID: 114167981477588908}
   m_Layer: 15
   m_Name: DestructibleBullet
   m_TagString: Untagged
@@ -129,8 +130,53 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 1
+--- !u!114 &114167981477588908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681502366100686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e6234390748014bbf6f6af485ae4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 2
+  InvulnerabilityTime: 0
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114199061409129536}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: IntegerEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &114199061409129536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681502366100686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae143464021aca48929494bd1983b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114226846970013344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,19 +192,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   DamageAmount: 1
---- !u!114 &114438885966494208
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1681502366100686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 348e1995053087c47ab447d68ecd5b42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0, z: 0}
-  Health: 2
+  OnDamageDealt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114199061409129536}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!135 &135914159639147536
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ship : MonoBehaviour, IDamageable {
+public class Ship : MonoBehaviour {
 
-    public int Health = 3;
     public Transform LeftWing;
     public Transform RightWing;
     public Turret turret;
@@ -31,14 +30,21 @@ public class Ship : MonoBehaviour, IDamageable {
         return rtPressed;
     }
 
-    public void TakeDamage(DamageDealer damageDealer) {
-        Health -= damageDealer.DamageAmount;
-        RightWing.gameObject.SetActive(Health>2);
-        LeftWing.gameObject.SetActive(Health>1);
-        if(Health<=0){ KillSelf(); }
+    public void DamageTaken(int currentHealth){
+        Debug.Log("CurrentHealth: " + currentHealth);
+        RightWing.gameObject.SetActive(currentHealth>2);
+        LeftWing.gameObject.SetActive(currentHealth>1);
+        //if(Health<=0){ KillSelf(); }
     }
 
-    private void KillSelf() {
+    //public void TakeDamage(DamageDealer damageDealer) {
+    //    Health -= damageDealer.DamageAmount;
+    //    RightWing.gameObject.SetActive(Health>2);
+    //    LeftWing.gameObject.SetActive(Health>1);
+    //    if(Health<=0){ KillSelf(); }
+    //}
+
+    public void Kill() {
         Destroy(this.gameObject);
     }
 

@@ -129,7 +129,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 1
 --- !u!114 &114166968364457824
 MonoBehaviour:
@@ -158,6 +158,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   DamageAmount: 1
+  OnDamageDealt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114166968364457824}
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!135 &135100831332668654
 SphereCollider:
   m_ObjectHideFlags: 1

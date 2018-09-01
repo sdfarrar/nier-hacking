@@ -2,27 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShip : MonoBehaviour, IDamageable {
+public class EnemyShip : MonoBehaviour {
 
-	public int Health = 4;
-
-    void Start () {
+    void Start() {
 		
 	}
 	
-	void Update () {
+	void Update() {
 		
 	}
 
-    public void TakeDamage(DamageDealer damageDealer) {
-		Health -= damageDealer.DamageAmount;
-		if(Health<=0){
-			KillSelf();
-		}
-    }
+	public void TestUnitHealth() {
+		Debug.Log("I DED");
+	}
 
-	private void KillSelf() {
-		Destroy(this.gameObject);
+	public void TestUnitHealth2() {
+		Debug.Log("I DED MORE");
 	}
 
 }

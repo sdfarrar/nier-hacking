@@ -18,7 +18,7 @@ public class Turret : MonoBehaviour {
 	void Update() {
 	}
 
-    public bool CanFire() {
+    public virtual bool CanFire() {
 		return Time.time>=nextFire;
     }
 
