@@ -34,15 +34,7 @@ public class Ship : MonoBehaviour {
         Debug.Log("CurrentHealth: " + currentHealth);
         RightWing.gameObject.SetActive(currentHealth>2);
         LeftWing.gameObject.SetActive(currentHealth>1);
-        //if(Health<=0){ KillSelf(); }
     }
-
-    //public void TakeDamage(DamageDealer damageDealer) {
-    //    Health -= damageDealer.DamageAmount;
-    //    RightWing.gameObject.SetActive(Health>2);
-    //    LeftWing.gameObject.SetActive(Health>1);
-    //    if(Health<=0){ KillSelf(); }
-    //}
 
     public void Kill() {
         Destroy(this.gameObject);
