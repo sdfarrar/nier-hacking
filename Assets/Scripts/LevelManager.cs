@@ -13,10 +13,18 @@ public class LevelManager : MonoBehaviour {
 		bosses = FindObjectsOfType<Boss>();
 	}
 	
-	// Update is called once per frame
-	void Update() {
+    public void CheckLevelComplete() {
+        StartCoroutine(Check());
+    }
+
+    public void GameOver() {
+        Debug.Log("Game over");
+    }
+
+    private IEnumerator Check(){
+        yield return new WaitForEndOfFrame();
 		if(AreBossesDead()){ EndLevel(); }
-	}
+    }
 
 	private bool AreBossesDead(){
 		bool allDead = true;
@@ -28,7 +36,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	private void EndLevel() {
-		Debug.Log("DONE");
+		Debug.Log("Level complete");
 	}
 
 }

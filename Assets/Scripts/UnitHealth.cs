@@ -18,8 +18,8 @@ public class UnitHealth : MonoBehaviour, IDamageable {
     public void TakeDamage(DamageDealer damageDealer){
 		Health.Value -= damageDealer.DamageAmount;
 		if(Health.Value<=0){
-			OnDeathEvent.Invoke();
 			Destroy(this.gameObject);
+			OnDeathEvent.Invoke();
 			return;
 		}
 

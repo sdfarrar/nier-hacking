@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AutoTurret : Turret {
 
-	void Awake(){
+	void Start(){
 		InvokeRepeating("Fire", 0, FireDelay);
 	}
 

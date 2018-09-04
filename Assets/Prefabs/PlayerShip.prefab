@@ -685,7 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 25
   MaxRotationSpeed: 720
-  UseController: 1
+  UseController: 0
 --- !u!114 &114635968168935958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,8 +723,8 @@ MonoBehaviour:
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114635968168935958}
-        m_MethodName: Kill
+      - m_Target: {fileID: 11400000, guid: e7a6f98637a26414486c7fe02a99eb6c, type: 2}
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
