@@ -215,8 +215,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691037934037558}
-  m_LocalRotation: {x: 0, y: -0.0009598613, z: 0, w: 0.9999996}
-  m_LocalPosition: {x: 1.29, y: 0, z: -11.4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.29, y: 1.5, z: -11.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4275489648951436}
@@ -224,7 +224,7 @@ Transform:
   - {fileID: 4070719303080848}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0.11, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4275489648951436
 Transform:
   m_ObjectHideFlags: 1
@@ -587,7 +587,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!65 &65334229293151676
 BoxCollider:
@@ -668,10 +668,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 114166968364457824, guid: 3bebc39a73926fa4da029519a337844b,
     type: 2}
-  BulletSpeed: 10
+  BulletSpeed: 20
   FireDirection: {fileID: 4255775456500778}
   InvertDirection: 0
-  FireDelay: 0
+  FireDelay: 0.15
 --- !u!114 &114367269161676212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410388e3cac2b9641819ab49669ed238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 40
+  Speed: 25
   MaxRotationSpeed: 720
   UseController: 1
 --- !u!114 &114635968168935958
@@ -711,7 +711,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e6234390748014bbf6f6af485ae4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  StartingHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3bd1c0ac974e8e541aecf57e3a0efce2, type: 2}
+  Health:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 723f928b9ee872840920f7f829cbd08c, type: 2}
   InvulnerabilityTime: 0.5
   OnDeathEvent:
     m_PersistentCalls:

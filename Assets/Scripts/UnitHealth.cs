@@ -5,22 +5,25 @@ using UnityEngine.Events;
 
 public class UnitHealth : MonoBehaviour, IDamageable {
 
-	public int Health;
+	public IntegerReference StartingHealth;
+	public IntegerReference Health;
 	public float InvulnerabilityTime = 0.5f;
 	public UnityEvent OnDeathEvent;
-	//public UnityEvent<int> OnDamageEvent;
 	public IntegerEvent OnDamageEvent;
 
+	void Start(){
+		Health.Value = StartingHealth.Value;
+	}
+
     public void TakeDamage(DamageDealer damageDealer){
-		Debug.Log(Health + " - " + damageDealer.DamageAmount);
-        Health -= damageDealer.DamageAmount;
-		if(Health<=0){
+		Health.Value -= damageDealer.DamageAmount;
+		if(Health.Value<=0){
 			OnDeathEvent.Invoke();
 			Destroy(this.gameObject);
 			return;
 		}
 
-		OnDamageEvent.Invoke(Health);
+		OnDamageEvent.Invoke(Health.Value);
 		//TODO iframes
     }
 

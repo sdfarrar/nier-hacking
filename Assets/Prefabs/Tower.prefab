@@ -326,7 +326,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e6234390748014bbf6f6af485ae4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 4
+  StartingHealth:
+    UseConstant: 1
+    ConstantValue: 3
+    Variable: {fileID: 0}
+  Health:
+    UseConstant: 1
+    ConstantValue: 3
+    Variable: {fileID: 0}
   InvulnerabilityTime: 0
   OnDeathEvent:
     m_PersistentCalls:

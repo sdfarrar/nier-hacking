@@ -17,7 +17,8 @@ public class Ship : MonoBehaviour {
 	}
 	
 	void Update() {
-		if(Input.GetKeyDown(KeyCode.Mouse0) || GetRightTriggerDown()){
+		//if(Input.GetKeyDown(KeyCode.Mouse0) || GetRightTriggerDown()){
+		if(Input.GetKeyDown(KeyCode.Mouse0) || Input.GetAxis("XboxRightTrigger")!=0){
             turret.Fire();
         }
 	}
@@ -31,7 +32,6 @@ public class Ship : MonoBehaviour {
     }
 
     public void DamageTaken(int currentHealth){
-        Debug.Log("CurrentHealth: " + currentHealth);
         RightWing.gameObject.SetActive(currentHealth>2);
         LeftWing.gameObject.SetActive(currentHealth>1);
     }
