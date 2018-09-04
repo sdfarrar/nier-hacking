@@ -10,11 +10,18 @@ public class Boss : MonoBehaviour {
 	public float Speed = 50;
 	
 	private bool movingRight = true;
+    private UnitHealth hp;
 
-	void Start() {
-		
+	void Awake() {
+		hp = GetComponent<UnitHealth>();
 	}
-	
+
+    void Start(){
+        if(hp.Invulnerable){
+            Debug.Log("Enable particles");
+        }
+    }
+
 	void Update() {
 		if(movingRight){
 			MoveTowards(RightBounds);

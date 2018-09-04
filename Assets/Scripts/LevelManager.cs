@@ -9,8 +9,11 @@ public class LevelManager : MonoBehaviour {
 	private Boss[] bosses;
 	private EnemyShip[] enemyShips;
 
-	void Start() {
+	void Awake() {
 		bosses = FindObjectsOfType<Boss>();
+		enemyShips = FindObjectsOfType<EnemyShip>();
+
+        SetBossesInvulnerability(enemyShips.Length>0);
 	}
 	
     public void CheckLevelComplete() {
@@ -19,6 +22,12 @@ public class LevelManager : MonoBehaviour {
 
     public void GameOver() {
         Debug.Log("Game over");
+    }
+
+    private void SetBossesInvulnerability(bool invulnerable) {
+		foreach (var boss in bosses){ 
+            boss.GetComponent<UnitHealth>().Invulnerable = invulnerable;
+		}
     }
 
     private IEnumerator Check(){
