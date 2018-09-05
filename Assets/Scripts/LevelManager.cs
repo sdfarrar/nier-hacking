@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour {
 
 	public IntegerReference PlayerHealth;
+
+	public UnityEvent BossInvulnerableEvent;
+	public UnityEvent BossVulnerableEvent;
 
 	private Boss[] bosses;
 	private EnemyShip[] enemyShips;
@@ -13,7 +17,8 @@ public class LevelManager : MonoBehaviour {
 		bosses = FindObjectsOfType<Boss>();
 		enemyShips = FindObjectsOfType<EnemyShip>();
 
-        SetBossesInvulnerability(enemyShips.Length>0);
+        //SetBossesInvulnerability(enemyShips.Length>0);
+		if(enemyShips.Length>0){ BossInvulnerableEvent.Invoke(); }else{ BossVulnerableEvent.Invoke(); }
 	}
 	
     public void CheckLevelComplete() {
@@ -22,12 +27,6 @@ public class LevelManager : MonoBehaviour {
 
     public void GameOver() {
         Debug.Log("Game over");
-    }
-
-    private void SetBossesInvulnerability(bool invulnerable) {
-		foreach (var boss in bosses){ 
-            boss.GetComponent<UnitHealth>().Invulnerable = invulnerable;
-		}
     }
 
     private IEnumerator Check(){
